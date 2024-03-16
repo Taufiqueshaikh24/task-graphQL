@@ -2,7 +2,7 @@
 const { GraphQLObjectType  , GraphQLID, GraphQLString, GraphQLSchema, GraphQLList, GraphQLNonNull, GraphQLEnumType } =  require('graphql')
 
 const Users   = require('../models/usersDB');
-const { argsToArgsConfig } = require('graphql/type/definition');
+
 
 
 
