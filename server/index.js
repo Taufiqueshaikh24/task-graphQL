@@ -6,9 +6,9 @@ const app  = express();
 const { graphqlHTTP } = require('express-graphql')
 // MongoDB connection function 
 DB();
-app.use('/' , graphqlHTTP({
+app.use('/graphiql' , graphqlHTTP({
       schema ,
-      graphiql: process.env.NODE_ENV === 'development' || true  
+      graphiql: true  
 }))
 
 const port = process.env.PORT || 4444 ; 
