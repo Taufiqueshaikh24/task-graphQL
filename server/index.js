@@ -6,16 +6,12 @@ const app  = express();
 const { graphqlHTTP } = require('express-graphql')
 // MongoDB connection function 
 DB();
-app.use('/graphiql' , graphqlHTTP({
+app.use('/' , graphqlHTTP({
       schema ,
-      graphiql: process.env.NODE_ENV === 'development', 
+      graphiql: process.env.NODE_ENV === 'development' || true  
 }))
 
 const port = process.env.PORT || 4444 ; 
 
-
-app.get('/' , (req, res) => {
-    res.send('Welcome to Node');
-})
 
 app.listen(port , () => { console.log(`App is running on port ${port}`)});
